@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import pic1 from "../assets/pic1.jpg";
+import pic2 from "../assets/pic2.jpg";
+import pic4 from "../assets/pic4.jpg";
+import pic5 from "../assets/pic5.jpg";
+---
+
+<div class="embla__viewport">
+	<div class="embla__container">
+		<div class="embla__slide border">
+			<div class="embla__slide__number">
+				<Image
+					src={pic1}
+					class="object-cover"
+					alt="A bird sitting on a nest of eggs."
+				/>
+			</div>
+		</div>
+		<div class="embla__slide border">
+			<div class="embla__slide__number">
+				<Image
+					src={pic2}
+					class="object-cover"
+					alt="A bird sitting on a nest of eggs."
+				/>
+			</div>
+		</div>
+		<div class="embla__slide border">
+			<div class="embla__slide__number">
+				<Image
+					src={pic5}
+					class="object-cover"
+					alt="A bird sitting on a nest of eggs."
+				/>
+			</div>
+		</div>
+		<div class="embla__slide border">
+			<div class="embla__slide__number">
+				<Image
+					src={pic4}
+					class="object-cover"
+					alt="A bird sitting on a nest of eggs."
+				/>
+			</div>
+		</div>
+		<div class="embla__slide border">
+			<div class="embla__slide__number">
+				<Image
+					src={pic5}
+					class="object-cover"
+					alt="A bird sitting on a nest of eggs."
+				/>
+			</div>
+		</div>
+	</div>
+</div>

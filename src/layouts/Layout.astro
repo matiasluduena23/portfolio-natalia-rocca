@@ -1,4 +1,5 @@
 ---
+import NavMobile from "../components/NavMobile.astro";
 import "../styles/global.css";
 ---
 
@@ -8,49 +9,45 @@ import "../styles/global.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>Natalia Rocca</title>
 	</head>
 	<body class="font-barlow">
-		<header class="p-6">
-			<div class="container">
-				<button
-					class="relative z-30 flex flex-col justify-between group w-[32px] h-[26px] ml-auto"
-					id="btnHamburger"
-					aria-expanded="false"
-				>
-					<span
-						class="h-[3px] w-full rounded-xl origin-top-left transition-transform bg-black group-aria-expanded:transform group-aria-expanded:rotate-[49deg]"
-					>
-					</span>
-					<span
-						class="h-[3px] w-full rounded-xl ease-in-out bg-black transition-opacity group-aria-expanded:opacity-0"
-					>
-					</span>
-					<span
-						class="h-[3px] w-full rounded-xl origin-bottom-left transition-transform bg-black group-aria-expanded:transform group-aria-expanded:-rotate-[49deg]"
-					>
-					</span>
-				</button>
-			</div>
-			<nav
-				class="h-full bg-white absolute top-0 right-0 pt-20 w-0 transition-all ease-in-out overflow-hidden aria-expanded:w-[70%] z-20"
-				aria-expanded="false"
-				id="navigation"
+		<div class="container max-w-full mx-auto lg:max-w-[90%]">
+			<div
+				class="md:grid md:grid-cols-[230px,1fr] md:min-h-screen relative z-10"
 			>
-				<ul class="pl-8 space-y-4">
-					<li><a href="#" class="link-group">options</a></li>
-					<li><a href="#" class="link-group">options</a></li>
-					<li><a href="#" class="link-group">options</a></li>
-					<li><a href="#" class="link-group">options</a></li>
-					<li><a href="#" class="link-group">options</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<div class="absolute inset-0 bg-black opacity-30 z-10 hidden" id="overlay">
+				<header
+					class="p-6 md:pl-4 md:h-full border fixed md:relative top-0 left-0 w-full bg-white z-20"
+				>
+					<NavMobile />
+					<div class="hidden md:flex flex-col justify-center items-start mt-10">
+						<h1
+							class="text-start font uppercase tracking-wide text-2xl font-medium"
+						>
+							Natalia rocca
+						</h1>
+						<nav>
+							<ul class="space-y-4 mt-20 uppercase">
+								<li><a href="#" class="link-group">options</a></li>
+								<li><a href="#" class="link-group">options</a></li>
+								<li><a href="#" class="link-group">options</a></li>
+								<li><a href="#" class="link-group">options</a></li>
+								<li><a href="#" class="link-group">options</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+				<slot />
+			</div>
 		</div>
-		<slot />
-		<script src="../scripts/navigation.ts"></script>
 	</body>
+
+	<script src="../scripts/navigation.ts"></script>
 </html>

@@ -1,7 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ImagesMobile from "../components/ImagesMobile.astro";
+import ImagesCarousel from "../components/ImagesCarousel.astro";
+import CarouselBtns from "../components/CarouselBtns.astro";
 ---
 
 <Layout>
-	<h1 class="text-2xl">EVGENIA</h1>
+	<main class="mb-15 mt-40 md:mt-10 relative z-10">
+		<div class="container mx-auto md:hidden">
+			<ImagesMobile />
+		</div>
+
+		<section class="embla pl-4 hidden md:block">
+			<ImagesCarousel />
+			<div class="embla__controls">
+				<CarouselBtns />
+
+				<div class="embla__dots"></div>
+			</div>
+		</section>
+	</main>
+
+	<script src="../scripts/carousel.ts"></script>
 </Layout>
