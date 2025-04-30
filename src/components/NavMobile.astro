@@ -1,0 +1,31 @@
+---
+import HamburgerBtn from "./HamburgerBtn.astro";
+---
+
+<div class="md:hidden z-10">
+	<div class="container grid grid-cols-[auto,1fr,auto] items-center">
+		<div></div>
+		<h1 class="text-center font uppercase tracking-wide text-2xl">
+			Natalia rocca
+		</h1>
+		<HamburgerBtn />
+	</div>
+	<nav
+		class="h-full bg-white fixed top-0 bottom-0 right-0 pt-20 w-0 transition-all ease-in-out overflow-hidden aria-expanded:w-[70%] z-30"
+		aria-expanded="false"
+		id="navigation"
+	>
+		<ul class="pl-8 space-y-4">
+			<li><a href="#" class="link-group">options</a></li>
+			<li><a href="#" class="link-group">options</a></li>
+			<li><a href="#" class="link-group">options</a></li>
+			<li><a href="#" class="link-group">options</a></li>
+			<li><a href="#" class="link-group">options</a></li>
+		</ul>
+	</nav>
+	<div
+		class="fixed inset-0 top-0 left-0 w-full h-full bg-black opacity-30 z-20 hidden"
+		id="overlay"
+	>
+	</div>
+</div>
